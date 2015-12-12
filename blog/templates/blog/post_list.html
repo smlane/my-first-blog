@@ -3,16 +3,12 @@
 		<title>Sarah's blog</title>
 	</head>
 	<body>
-		<div>
-			<h1><a href=""> Django Girls Blog</a></h1>
-		</div>
-		<div>
-			<p>published: 12.12.2015, 12:50</p>
-			<p>Hi Kyle. I see you.</p>
-		</div>
-		<div>
-			<p>published: 12.12.2015, 12:51</p>
-			<p>What's up pooter?</p>
-		</div>
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaks }}</a></h1>
+			</div>
+		{% endfor %}
 	</body>
 </html>
